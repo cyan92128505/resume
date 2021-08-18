@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import type { GetStaticProps, NextPage } from "next";
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Carousel from "react-material-ui-carousel";
 import {
   Box,
@@ -11,7 +10,6 @@ import {
   Divider,
   Grid,
   IconButton,
-  Link,
   makeStyles,
   Typography,
   withStyles,
@@ -26,14 +24,7 @@ import {
   TimelineSeparator,
 } from "@material-ui/lab";
 
-import profileImage from "../public/profile.jpg";
-import cardovo from "../public/cardovo.png";
-import gamilms from "../public/gamilms.png";
-import gliona1 from "../public/gliona1.png";
-import gliona2 from "../public/gliona2.png";
-import wallet from "../public/wallet.png";
-import { useRouter } from "next/dist/client/router";
-import { useTranslation } from "next-i18next";
+import resource from "../src/resources/resource";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -82,8 +73,6 @@ const DisableOppositeTimelineItem = withStyles({
 
 const Home: NextPage = () => {
   const styles = useStyles();
-  const router = useRouter();
-  const { t } = useTranslation("common");
 
   return (
     <div className={styles.container}>
@@ -96,11 +85,13 @@ const Home: NextPage = () => {
         <Card className={styles.wrapper}>
           <Grid container alignItems="flex-start" spacing={3}>
             <Grid item md={4}>
-              <Image
+              <img
                 className={styles.profile_image}
-                src={profileImage}
                 alt="Profile Image"
-              ></Image>
+                src={resource.profile.image}
+                width={resource.profile.width}
+                height={resource.profile.height}
+              ></img>
               <h1>Wei-Hsin Liao</h1>
               <h2>(Aoma)</h2>
               <Typography
@@ -368,8 +359,18 @@ const Home: NextPage = () => {
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
               <Carousel animation="slide" indicators={false}>
-                <Image src={gliona1} alt="Gliona Demo"></Image>
-                <Image src={gliona2} alt="Gliona Demo"></Image>
+                <img
+                  alt="Gliona Demo"
+                  src={resource.gliona1.image}
+                  width={resource.gliona1.width}
+                  height={resource.gliona1.height}
+                ></img>
+                <img
+                  alt="Gliona Demo"
+                  src={resource.gliona2.image}
+                  width={resource.gliona2.width}
+                  height={resource.gliona2.height}
+                ></img>
               </Carousel>
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
@@ -395,7 +396,12 @@ const Home: NextPage = () => {
         <Card className={styles.product_term}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
-              <Image src={cardovo} alt="Cardovo Demo"></Image>
+              <img
+                alt="Cardovo Demo"
+                src={resource.cardovo.image}
+                width={resource.cardovo.width}
+                height={resource.cardovo.height}
+              ></img>
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
@@ -421,7 +427,12 @@ const Home: NextPage = () => {
           {" "}
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
-              <Image src={wallet} alt="Wallet Demo"></Image>
+              <img
+                alt="Wallet Demo"
+                src={resource.wallet.image}
+                width={resource.wallet.width}
+                height={resource.wallet.height}
+              ></img>
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
@@ -447,7 +458,12 @@ const Home: NextPage = () => {
         <Card className={styles.product_term}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
-              <Image src={gamilms} alt="GAMILMS"></Image>
+              <img
+                alt="GAMILMS"
+                src={resource.gamilms.image}
+                width={resource.gamilms.width}
+                height={resource.gamilms.height}
+              ></img>
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
@@ -475,21 +491,10 @@ const Home: NextPage = () => {
             {"Copyright © "}
             AJ-Home {new Date().getFullYear()}.
           </Typography>
-          <Typography variant="body2" align="right">
-            {t("change-locale")}
-            <a href="/zh">中文</a>
-            <a href="/en">ENG</a>
-          </Typography>
         </Box>
       </Container>
     </div>
   );
 };
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale!, ["common", "footer"])),
-  },
-});
 
 export default Home;

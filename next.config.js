@@ -1,7 +1,12 @@
-const { i18n } = require("./next-i18next.config");
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  i18n,
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      "/": { page: "/" },
+    };
+  },
 };

@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { config, library } from "@fortawesome/fontawesome-svg-core";
@@ -24,7 +23,7 @@ library.add(
   faGraduationCap
 );
 
-function MyApp(props: AppProps) {
+export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -52,5 +51,3 @@ function MyApp(props: AppProps) {
     </React.Fragment>
   );
 }
-
-export default appWithTranslation(MyApp);
