@@ -274,9 +274,7 @@ const Home: NextPage = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <h3 className={styles.experience_title}>
-                Flutter Mobile Engineer
-              </h3>
+              <h3 className={styles.experience_title}>Web/Flutter Engineer</h3>
               <p>Anytime Co., Ltd • April 2021 - Now</p>
               <ul>
                 <li>Develop Flutter APP</li>
