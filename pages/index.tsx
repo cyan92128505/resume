@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
     paddingTop: theme.spacing(5),
-    paddingLeft: theme.spacing(10),
-    paddingRight: theme.spacing(10),
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
     paddingBottom: theme.spacing(5),
   },
   profile_image: {
@@ -82,177 +82,188 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxWidth="md">
-        <Card className={styles.wrapper}>
-          <Grid container alignItems="flex-start" spacing={3}>
-            <Grid item md={4}>
-              <img
-                className={styles.profile_image}
-                alt="Profile Image"
-                src={resource.profile.image}
-                width={resource.profile.width}
-                height={resource.profile.height}
-              ></img>
-              <h1>Wei-Hsin Liao</h1>
-              <h2>(Aoma)</h2>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Web / Flutter Engineer
-              </Typography>
-              <p>
-                <FontAwesomeIcon icon={["fas", "map-marker-alt"]} />
-                <span> Yunlin ,Taiwan</span>
-              </p>
+        <Card>
+          <Grid container spacing={3} alignItems="center">
+            <Grid item md={1}></Grid>
+            <Grid item md={10}>
+              <div className={styles.wrapper}>
+                <Grid container alignItems="flex-start" spacing={3}>
+                  <Grid item md={4}>
+                    <img
+                      className={styles.profile_image}
+                      alt="Profile Image"
+                      src={resource.profile.image}
+                      width={resource.profile.width}
+                      height={resource.profile.height}
+                    ></img>
+                    <h1>Wei-Hsin Liao</h1>
+                    <h2>(Aoma)</h2>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Web / Flutter Engineer
+                    </Typography>
+                    <p>
+                      <FontAwesomeIcon icon={["fas", "map-marker-alt"]} />
+                      <span> Yunlin ,Taiwan</span>
+                    </p>
+                  </Grid>
+                  <Grid item md={8}>
+                    <ul>
+                      <li>
+                        I am a Front-End Developer and have experience in
+                        Back-End and DevOps.
+                      </li>
+                      <li>
+                        4 years of experience in the development of big data
+                        type management background system.
+                      </li>
+                      <li>
+                        3 years of experience in cross-platform Flutter APP.
+                      </li>
+                    </ul>
+                  </Grid>
+                </Grid>
+                <Grid container alignItems="flex-end" justifyContent="flex-end">
+                  <Typography
+                    variant="caption"
+                    component="span"
+                    color="primary"
+                    align="center"
+                    className={styles.email}
+                  >
+                    <a
+                      href="mailto:cyan92128505@gmail.com"
+                      rel="noreferrer"
+                      target="_blank"
+                      color="primary"
+                    >
+                      cyan92128505@gmail.com
+                    </a>
+                  </Typography>
+                  <IconButton color="primary">
+                    <a
+                      href="https://github.com/cyan92128505"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={["fab", "github-square"]} />
+                    </a>
+                  </IconButton>
+                  <IconButton color="primary">
+                    <a
+                      href="https://www.linkedin.com/in/wei-hsin-liao-21ba3b60"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={["fab", "linkedin"]} />
+                    </a>
+                  </IconButton>
+                </Grid>
+                <h2>Skill</h2>
+                <Grid container alignItems="flex-start" spacing={3}>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Front-End
+                    </Typography>
+                    <ul>
+                      <li>Framework ( React, Vue...)</li>
+                      <li>
+                        Engineering Architecture (Status management, i18n,
+                        Theme, Auth...)
+                      </li>
+                      <li>CI/CD</li>
+                      <li>API connection</li>
+                      <li>Live streaming</li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Mobile
+                    </Typography>
+                    <ul>
+                      <li>
+                        Flutter cross-platform APP development (iOS/ Android)
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      DevOps
+                    </Typography>
+                    <ul>
+                      <li>Github Action</li>
+                      <li>Google Cloud Platform</li>
+                      <li>Git</li>
+                      <li>Gitlab CI/CD</li>
+                    </ul>
+                  </Grid>
+                </Grid>
+                <Grid container alignItems="flex-start" spacing={3}>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Back-End
+                    </Typography>
+                    <ul>
+                      <li>Node.js, Golang</li>
+                      <li>RESTful api, gRPC,</li>
+                      <li>Microservices</li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Database
+                    </Typography>
+                    <ul>
+                      <li>Use Redis to store and push across services</li>
+                      <li>PostgreSQL (Basic database design)</li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      Desktop
+                    </Typography>
+                    <ul>
+                      <li>Electron desktop development</li>
+                    </ul>
+                  </Grid>
+                </Grid>
+              </div>
             </Grid>
-            <Grid item md={8}>
-              <ul>
-                <li>
-                  I am a Front-End Developer and have experience in Back-End and
-                  DevOps.
-                </li>
-                <li>
-                  4 years of experience in the development of big data type
-                  management background system.
-                </li>
-                <li>3 years of experience in cross-platform Flutter APP.</li>
-              </ul>
-            </Grid>
-          </Grid>
-          <Grid container alignItems="flex-end" justifyContent="flex-end">
-            <Typography
-              variant="caption"
-              component="span"
-              color="primary"
-              align="center"
-              className={styles.email}
-            >
-              <a
-                href="mailto:cyan92128505@gmail.com"
-                rel="noreferrer"
-                target="_blank"
-                color="primary"
-              >
-                cyan92128505@gmail.com
-              </a>
-            </Typography>
-            <IconButton color="primary">
-              <a
-                href="https://github.com/cyan92128505"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={["fab", "github-square"]} />
-              </a>
-            </IconButton>
-            <IconButton color="primary">
-              <a
-                href="https://www.linkedin.com/in/wei-hsin-liao-21ba3b60"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={["fab", "linkedin"]} />
-              </a>
-            </IconButton>
-          </Grid>
-          <Divider />
-          <h2>Skill</h2>
-          <Grid container alignItems="flex-start" spacing={3}>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Front-End
-              </Typography>
-              <ul>
-                <li>Framework ( React, Vue...)</li>
-                <li>
-                  Engineering Architecture (Status management, i18n, Theme,
-                  Auth...)
-                </li>
-                <li>CI/CD</li>
-                <li>API connection</li>
-                <li>Live streaming</li>
-              </ul>
-            </Grid>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Mobile
-              </Typography>
-              <ul>
-                <li>Flutter cross-platform APP development (iOS/ Android)</li>
-              </ul>
-            </Grid>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                DevOps
-              </Typography>
-              <ul>
-                <li>Github Action</li>
-                <li>Google Cloud Platform</li>
-                <li>Git</li>
-                <li>Gitlab CI/CD</li>
-              </ul>
-            </Grid>
-          </Grid>
-          <Grid container alignItems="flex-start" spacing={3}>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Back-End
-              </Typography>
-              <ul>
-                <li>Node.js, Golang</li>
-                <li>RESTful api, gRPC,</li>
-                <li>Microservices</li>
-              </ul>
-            </Grid>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Database
-              </Typography>
-              <ul>
-                <li>Use Redis to store and push across services</li>
-                <li>PostgreSQL (Basic database design)</li>
-              </ul>
-            </Grid>
-            <Grid item md={4}>
-              <Typography
-                variant="h6"
-                component="h6"
-                color="primary"
-                gutterBottom
-              >
-                Desktop
-              </Typography>
-              <ul>
-                <li>Electron desktop development</li>
-              </ul>
-            </Grid>
+            <Grid item md={1}></Grid>
           </Grid>
         </Card>
         <h2>Experience</h2>
