@@ -79,7 +79,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Aoma Liao - Web/Flutter Engineer</title>
         <meta name="description" content="Web/Flutter Engineer" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Container maxWidth="md">
         <Card>
