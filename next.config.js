@@ -12,4 +12,7 @@ module.exports = {
       "/": { page: "/" },
     };
   },
+  generate: {
+    nojekyll: true,
+  },
 };
