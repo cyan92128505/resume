@@ -25,6 +25,7 @@ import {
 } from "@material-ui/lab";
 
 import resource from "../src/resources/resource";
+import { T, useLang, useSetLang, useT } from "../src/i18n";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -61,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     verticalAlign: "middle",
     lineHeight: "24px",
   },
+  skill_term: {
+    width: "33%",
+  },
 }));
 
 const DisableOppositeTimelineItem = withStyles({
@@ -73,6 +77,9 @@ const DisableOppositeTimelineItem = withStyles({
 
 const Home: NextPage = () => {
   const styles = useStyles();
+  const t = useT();
+  const setLang = useSetLang();
+  const lang = useLang();
 
   return (
     <div className={styles.container}>
@@ -81,8 +88,16 @@ const Home: NextPage = () => {
         <meta name="description" content="Web/Flutter Engineer" />
         <link rel="icon" href="favicon.ico" />
       </Head>
+      <h1>
+        <T id="WELCOME_HEADLINE" />
+      </h1>{" "}
+      <div style={{ marginTop: "2rem" }}>
+        <button onClick={() => setLang(lang === "de" ? "en" : "de")}>
+          toggle lang
+        </button>
+      </div>
       <Container maxWidth="md">
-        <Card>
+        <Card elevation={1}>
           <Grid container spacing={3} alignItems="center">
             <Grid item md={1}></Grid>
             <Grid item md={10}>
@@ -165,7 +180,7 @@ const Home: NextPage = () => {
                 </Grid>
                 <h2>Skill</h2>
                 <Grid container alignItems="flex-start" spacing={3}>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -185,7 +200,7 @@ const Home: NextPage = () => {
                       <li>Live streaming</li>
                     </ul>
                   </Grid>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -200,7 +215,7 @@ const Home: NextPage = () => {
                       </li>
                     </ul>
                   </Grid>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -218,7 +233,7 @@ const Home: NextPage = () => {
                   </Grid>
                 </Grid>
                 <Grid container alignItems="flex-start" spacing={3}>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -233,7 +248,7 @@ const Home: NextPage = () => {
                       <li>Microservices</li>
                     </ul>
                   </Grid>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -247,7 +262,7 @@ const Home: NextPage = () => {
                       <li>PostgreSQL (Basic database design)</li>
                     </ul>
                   </Grid>
-                  <Grid item md={4}>
+                  <Grid item md={4} className={styles.skill_term}>
                     <Typography
                       variant="h6"
                       component="h6"
@@ -277,7 +292,19 @@ const Home: NextPage = () => {
               <h3 className={styles.experience_title}>Web/Flutter Engineer</h3>
               <p>Anytime Co., Ltd • April 2021 - Now</p>
               <ul>
-                <li>Develop Flutter APP</li>
+                <li>
+                  Develop Flutter APP{" "}
+                  <Typography color="primary" variant="body2" component="span">
+                    <a
+                      href="https://www.anytime.tw/"
+                      target="_blank"
+                      rel="noreferrer"
+                      color=""
+                    >
+                      (anytime.tw)
+                    </a>
+                  </Typography>
+                </li>
               </ul>
             </TimelineContent>
           </DisableOppositeTimelineItem>
@@ -347,7 +374,9 @@ const Home: NextPage = () => {
               <h3 className={styles.experience_title}>
                 Changhua Normal University 2014 - 2016
               </h3>
-              <h4>Master of digital content technology and management</h4>
+              <Typography variant="body1" component="p">
+                Master of digital content technology and management
+              </Typography>
             </TimelineContent>
           </DisableOppositeTimelineItem>
           <DisableOppositeTimelineItem>
@@ -358,16 +387,24 @@ const Home: NextPage = () => {
               <h3 className={styles.experience_title}>
                 Changhua Normal University 2008 - 2013
               </h3>
-              <h4>Bachelor of math</h4>
+              <Typography variant="body1" component="p">
+                Bachelor of math
+              </Typography>
             </TimelineContent>
           </DisableOppositeTimelineItem>
         </Timeline>
         <Divider className={styles.product_term} />
         <h2>Project</h2>
-        <Card className={styles.product_term}>
+        <Card className={styles.product_term} elevation={0}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
-              <Carousel animation="slide" indicators={false}>
+              <img
+                alt="Gliona Demo"
+                src={resource.gliona1.image}
+                width={resource.gliona1.width}
+                height={resource.gliona1.height}
+              ></img>
+              {/* <Carousel animation="slide" indicators={false}>
                 <img
                   alt="Gliona Demo"
                   src={resource.gliona1.image}
@@ -380,15 +417,15 @@ const Home: NextPage = () => {
                   width={resource.gliona2.width}
                   height={resource.gliona2.height}
                 ></img>
-              </Carousel>
+              </Carousel> */}
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
                 <h3>Gliona</h3>
-                <h4>
+                <Typography variant="body1" component="p">
                   A Serverless management system based on React-Admin Manage the
                   visited veterinary hospital for pet business
-                </h4>
+                </Typography>
                 <h5>
                   <a
                     href="https://cyan92128505.github.io/gliona/"
@@ -402,7 +439,7 @@ const Home: NextPage = () => {
             </Grid>
           </Grid>
         </Card>
-        <Card className={styles.product_term}>
+        <Card className={styles.product_term} elevation={0}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
               <img
@@ -415,10 +452,10 @@ const Home: NextPage = () => {
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
                 <h3>Cardovo</h3>
-                <h4>
+                <Typography variant="body1" component="p">
                   The Flutter App: Cardovo, which is a convenient application
                   that can store all your membership cards.
-                </h4>
+                </Typography>
                 <h5>
                   <a
                     href="https://geming-rddev.github.io/cardovo-info/view/"
@@ -432,7 +469,7 @@ const Home: NextPage = () => {
             </Grid>
           </Grid>
         </Card>
-        <Card className={styles.product_term}>
+        <Card className={styles.product_term} elevation={0}>
           {" "}
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
@@ -446,11 +483,11 @@ const Home: NextPage = () => {
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
                 <h3>Mobile Wallet</h3>
-                <h4>
+                <Typography variant="body1" component="p">
                   P2P money Transfer Bill Payments International money
                   remittance Disbursements: Payroll/ Social/ Government Consumer
                   App
-                </h4>
+                </Typography>
                 <h5>
                   <a
                     href="https://geming-rddev.github.io/geming-digi/"
@@ -464,7 +501,7 @@ const Home: NextPage = () => {
             </Grid>
           </Grid>
         </Card>
-        <Card className={styles.product_term}>
+        <Card className={styles.product_term} elevation={0}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
               <img
@@ -477,11 +514,11 @@ const Home: NextPage = () => {
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
                 <h3>Gliona</h3>
-                <h4>
+                <Typography variant="body1" component="p">
                   Use MEAN (MongoDB, Express, Angular and Node) stack for build
                   a “Meaningful Gamification Learning Management System” Member
                   can learn and build their mobile game on GAMILMS.
-                </h4>
+                </Typography>
                 <h5>
                   <a
                     href="https://github.com/cyan92128505/gamilms"
