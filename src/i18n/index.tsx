@@ -1,24 +1,24 @@
 import React, { useCallback, useMemo } from "react";
-import LanguageKeysDe from "./de";
+import LanguageKeysZh from "./zh";
 import LanguageKeys, { LangProps } from "./en";
 
-const de = new LanguageKeysDe();
+const zh = new LanguageKeysZh();
 const en = new LanguageKeys();
 
 type State = { lang: string; keys: LanguageKeys };
 
 const LangStateContext = React.createContext<State | undefined>(undefined);
 const LangUpdaterContext = React.createContext<
-  React.Dispatch<React.SetStateAction<"en" | "de">> | undefined
+  React.Dispatch<React.SetStateAction<"en" | "zh">> | undefined
 >(undefined);
 
 const LangProvider: React.FunctionComponent<{}> = ({ children }) => {
-  const [lang, setLang] = React.useState<"en" | "de">("en");
+  const [lang, setLang] = React.useState<"en" | "zh">("en");
 
   const value = useMemo(() => {
     return {
       lang,
-      keys: lang === "de" ? de : en,
+      keys: lang === "zh" ? zh : en,
     };
   }, [lang]);
 
@@ -35,7 +35,10 @@ function useLangState() {
   const langState = React.useContext(LangStateContext);
 
   if (langState === undefined) {
-    throw new Error("useLangState must be used within a LangProvider");
+    return {
+      lang: "zh",
+      keys: zh,
+    };
   }
 
   return langState;

@@ -7,9 +7,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { config, library } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
-  faMapMarkerAlt,
   faBuilding,
   faGraduationCap,
+  faLanguage,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import theme from "../src/theme";
@@ -17,11 +18,12 @@ import { LangProvider } from "../src/i18n/index";
 
 config.autoAddCss = false;
 library.add(
-  faMapMarkerAlt,
-  faLinkedin,
-  faGithubSquare,
   faBuilding,
-  faGraduationCap
+  faGithubSquare,
+  faGraduationCap,
+  faLanguage,
+  faLinkedin,
+  faMapMarkerAlt
 );
 
 export default function MyApp(props: AppProps) {

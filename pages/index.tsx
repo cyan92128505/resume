@@ -2,7 +2,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Carousel from "react-material-ui-carousel";
+// import Carousel from "react-material-ui-carousel";
 import {
   Box,
   Card,
@@ -25,7 +25,7 @@ import {
 } from "@material-ui/lab";
 
 import resource from "../src/resources/resource";
-import { T, useLang, useSetLang, useT } from "../src/i18n";
+import { T, useLang, useSetLang } from "../src/i18n";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -77,7 +77,6 @@ const DisableOppositeTimelineItem = withStyles({
 
 const Home: NextPage = () => {
   const styles = useStyles();
-  const t = useT();
   const setLang = useSetLang();
   const lang = useLang();
 
@@ -88,14 +87,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Web/Flutter Engineer" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      <h1>
-        <T id="WELCOME_HEADLINE" />
-      </h1>{" "}
-      <div style={{ marginTop: "2rem" }}>
-        <button onClick={() => setLang(lang === "de" ? "en" : "de")}>
-          toggle lang
-        </button>
-      </div>
+
       <Container maxWidth="md">
         <Card elevation={1}>
           <Grid container spacing={3} alignItems="center">
@@ -111,33 +103,41 @@ const Home: NextPage = () => {
                       width={resource.profile.width}
                       height={resource.profile.height}
                     ></img>
-                    <h1>Wei-Hsin Liao</h1>
-                    <h2>(Aoma)</h2>
+                    <h1>
+                      <T id="NAME" />
+                    </h1>
+                    <h2>
+                      <T id="NICKNAME" />
+                    </h2>
                     <Typography
                       variant="h6"
                       component="h6"
                       color="primary"
                       gutterBottom
                     >
-                      Web / Flutter Engineer
+                      <T id="JOB_TITLE" />
                     </Typography>
                     <p>
                       <FontAwesomeIcon icon={["fas", "map-marker-alt"]} />
-                      <span> Yunlin ,Taiwan</span>
+                      <span>
+                        {" "}
+                        <T id="LOCATION" />
+                      </span>
                     </p>
                   </Grid>
                   <Grid item md={8}>
                     <ul>
                       <li>
-                        I am a Front-End Developer and have experience in
-                        Back-End and DevOps.
+                        <T id="INFO_1" />
                       </li>
                       <li>
-                        4 years of experience in the development of big data
-                        type management background system.
+                        <T id="INFO_2" />
                       </li>
                       <li>
-                        3 years of experience in cross-platform Flutter APP.
+                        <T id="INFO_3" />
+                      </li>
+                      <li>
+                        <T id="INFO_4" />
                       </li>
                     </ul>
                   </Grid>
@@ -161,15 +161,6 @@ const Home: NextPage = () => {
                   </Typography>
                   <IconButton color="primary">
                     <a
-                      href="https://github.com/cyan92128505"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <FontAwesomeIcon icon={["fab", "github-square"]} />
-                    </a>
-                  </IconButton>
-                  <IconButton color="primary">
-                    <a
                       href="https://www.linkedin.com/in/wei-hsin-liao-21ba3b60"
                       rel="noreferrer"
                       target="_blank"
@@ -177,8 +168,19 @@ const Home: NextPage = () => {
                       <FontAwesomeIcon icon={["fab", "linkedin"]} />
                     </a>
                   </IconButton>
+                  <IconButton color="primary">
+                    <a
+                      href="https://github.com/cyan92128505"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={["fab", "github-square"]} />
+                    </a>
+                  </IconButton>
                 </Grid>
-                <h2>Skill</h2>
+                <h2>
+                  <T id="SKILL" />
+                </h2>
                 <Grid container alignItems="flex-start" spacing={3}>
                   <Grid item md={4} className={styles.skill_term}>
                     <Typography
@@ -187,31 +189,23 @@ const Home: NextPage = () => {
                       color="primary"
                       gutterBottom
                     >
-                      Front-End
+                      <T id="FRONT_END" />
                     </Typography>
                     <ul>
-                      <li>Framework ( React, Vue...)</li>
                       <li>
-                        Engineering Architecture (Status management, i18n,
-                        Theme, Auth...)
+                        <T id="FRONT_END_INFO_1" />
                       </li>
-                      <li>CI/CD</li>
-                      <li>API connection</li>
-                      <li>Live streaming</li>
-                    </ul>
-                  </Grid>
-                  <Grid item md={4} className={styles.skill_term}>
-                    <Typography
-                      variant="h6"
-                      component="h6"
-                      color="primary"
-                      gutterBottom
-                    >
-                      Mobile
-                    </Typography>
-                    <ul>
                       <li>
-                        Flutter cross-platform APP development (iOS/ Android)
+                        <T id="FRONT_END_INFO_2" />
+                      </li>
+                      <li>
+                        <T id="FRONT_END_INFO_3" />
+                      </li>
+                      <li>
+                        <T id="FRONT_END_INFO_4" />
+                      </li>
+                      <li>
+                        <T id="FRONT_END_INFO_5" />
                       </li>
                     </ul>
                   </Grid>
@@ -222,13 +216,36 @@ const Home: NextPage = () => {
                       color="primary"
                       gutterBottom
                     >
-                      DevOps
+                      <T id="MOBILE" />
                     </Typography>
                     <ul>
-                      <li>Github Action</li>
-                      <li>Google Cloud Platform</li>
-                      <li>Git</li>
-                      <li>Gitlab CI/CD</li>
+                      <li>
+                        <T id="MOBILE_INFO_1" />
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={4} className={styles.skill_term}>
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      color="primary"
+                      gutterBottom
+                    >
+                      <T id="DEVOPS" />
+                    </Typography>
+                    <ul>
+                      <li>
+                        <T id="DEVOPS_INFO_1" />
+                      </li>
+                      <li>
+                        <T id="DEVOPS_INFO_2" />
+                      </li>
+                      <li>
+                        <T id="DEVOPS_INFO_3" />
+                      </li>
+                      <li>
+                        <T id="DEVOPS_INFO_4" />
+                      </li>
                     </ul>
                   </Grid>
                 </Grid>
@@ -240,12 +257,18 @@ const Home: NextPage = () => {
                       color="primary"
                       gutterBottom
                     >
-                      Back-End
+                      <T id="BACK_END" />
                     </Typography>
                     <ul>
-                      <li>Node.js, Golang</li>
-                      <li>RESTful api, gRPC,</li>
-                      <li>Microservices</li>
+                      <li>
+                        <T id="BACK_END_INFO_1" />
+                      </li>
+                      <li>
+                        <T id="BACK_END_INFO_2" />
+                      </li>
+                      <li>
+                        <T id="BACK_END_INFO_3" />
+                      </li>
                     </ul>
                   </Grid>
                   <Grid item md={4} className={styles.skill_term}>
@@ -255,11 +278,15 @@ const Home: NextPage = () => {
                       color="primary"
                       gutterBottom
                     >
-                      Database
+                      <T id="DATABASE" />
                     </Typography>
                     <ul>
-                      <li>Use Redis to store and push across services</li>
-                      <li>PostgreSQL (Basic database design)</li>
+                      <li>
+                        <T id="DATABASE_INFO_1" />
+                      </li>
+                      <li>
+                        <T id="DATABASE_INFO_2" />
+                      </li>
                     </ul>
                   </Grid>
                   <Grid item md={4} className={styles.skill_term}>
@@ -269,10 +296,12 @@ const Home: NextPage = () => {
                       color="primary"
                       gutterBottom
                     >
-                      Desktop
+                      <T id="DESKTOP" />
                     </Typography>
                     <ul>
-                      <li>Electron desktop development</li>
+                      <li>
+                        <T id="DESKTOP_INFO_1" />
+                      </li>
                     </ul>
                   </Grid>
                 </Grid>
@@ -281,7 +310,9 @@ const Home: NextPage = () => {
             <Grid item md={1}></Grid>
           </Grid>
         </Card>
-        <h2>Experience</h2>
+        <h2>
+          <T id="EXPERIENCE" />
+        </h2>
         <Timeline align="left">
           <DisableOppositeTimelineItem>
             <TimelineSeparator>
@@ -289,11 +320,15 @@ const Home: NextPage = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <h3 className={styles.experience_title}>Web/Flutter Engineer</h3>
-              <p>Anytime Co., Ltd • April 2021 - Now</p>
+              <h3 className={styles.experience_title}>
+                <T id="EXPERIENCE_COMPANY_1_JOB_TITLE" />
+              </h3>
+              <p>
+                <T id="EXPERIENCE_COMPANY_1" />
+              </p>
               <ul>
                 <li>
-                  Develop Flutter APP{" "}
+                  <T id="EXPERIENCE_COMPANY_1_INFO_1" />{" "}
                   <Typography color="primary" variant="body2" component="span">
                     <a
                       href="https://www.anytime.tw/"
@@ -315,24 +350,27 @@ const Home: NextPage = () => {
             </TimelineSeparator>
             <TimelineContent>
               <h3 className={styles.experience_title}>
-                Flutter Front-End Engineer
+                <T id="EXPERIENCE_COMPANY_2_JOB_TITLE" />
               </h3>
-              <p>New Garden Co., Ltd • April 2020 - February 2021</p>
+              <p>
+                <T id="EXPERIENCE_COMPANY_2" />
+              </p>
               <ul>
                 <li>
-                  Design UI/UX, develop front-end interaction on the web, and
-                  optimizing user experience
+                  <T id="EXPERIENCE_COMPANY_2_INFO_1" />
                 </li>
                 <li>
-                  Responsible for system front-end and back-end development
-                  work, design the overall system architecture
+                  <T id="EXPERIENCE_COMPANY_2_INFO_2" />
                 </li>
-                <li> Design microservice architecture on GCP</li>
                 <li>
-                  Integrate Web/App API to assist in platform interface and
-                  integration
+                  <T id="EXPERIENCE_COMPANY_2_INFO_3" />
                 </li>
-                <li> Refactor the old system and import TDD (Golang)</li>
+                <li>
+                  <T id="EXPERIENCE_COMPANY_2_INFO_4" />
+                </li>
+                <li>
+                  <T id="EXPERIENCE_COMPANY_2_INFO_5" />
+                </li>
               </ul>
             </TimelineContent>
           </DisableOppositeTimelineItem>
@@ -341,29 +379,41 @@ const Home: NextPage = () => {
               <TimelineDot color="primary" />
             </TimelineSeparator>
             <TimelineContent>
-              <h3 className={styles.experience_title}>Web/App Developer</h3>
-              <p>GE MING Digital Media • October 2016 - March 2020</p>
-              <h4>2018/07 - 2020/03</h4>
+              <h3 className={styles.experience_title}>
+                <T id="EXPERIENCE_COMPANY_3_JOB_TITLE" />
+              </h3>
+              <p>
+                <T id="EXPERIENCE_COMPANY_3" />
+              </p>
+              <h4>
+                <T id="EXPERIENCE_COMPANY_3_INFO_1" />
+              </h4>
               <ul>
-                <li>Develop Flutter cross-platform APP</li>
                 <li>
-                  Develop the front end of the operation and maintenance
-                  platform
+                  <T id="EXPERIENCE_COMPANY_3_INFO_1_1" />
+                </li>
+                <li>
+                  <T id="EXPERIENCE_COMPANY_3_INFO_1_2" />
                 </li>
               </ul>
-              <h4>2016/10 - 2018/6</h4>
+              <h4>
+                <T id="EXPERIENCE_COMPANY_3_INFO_2" />
+              </h4>
               <ul>
                 <li>
-                  Develop the front-end of the gaming information platform,
-                  including the user-part and manager-part
+                  <T id="EXPERIENCE_COMPANY_3_INFO_2_1" />
                 </li>
-                <li>Use Electron to develop front-end deployment tools</li>
+                <li>
+                  <T id="EXPERIENCE_COMPANY_3_INFO_2_2" />
+                </li>
               </ul>
             </TimelineContent>
           </DisableOppositeTimelineItem>
         </Timeline>
         <Divider className={styles.product_term} />
-        <h2>Education</h2>
+        <h2>
+          <T id="EDUCATION" />
+        </h2>
         <Timeline align="left">
           <DisableOppositeTimelineItem>
             <TimelineSeparator>
@@ -372,10 +422,10 @@ const Home: NextPage = () => {
             </TimelineSeparator>
             <TimelineContent>
               <h3 className={styles.experience_title}>
-                Changhua Normal University 2014 - 2016
+                <T id="EDUCATION_SCHOOL_1" />
               </h3>
               <Typography variant="body1" component="p">
-                Master of digital content technology and management
+                <T id="EDUCATION_SCHOOL_1_INFO" />
               </Typography>
             </TimelineContent>
           </DisableOppositeTimelineItem>
@@ -385,16 +435,18 @@ const Home: NextPage = () => {
             </TimelineSeparator>
             <TimelineContent>
               <h3 className={styles.experience_title}>
-                Changhua Normal University 2008 - 2013
+                <T id="EDUCATION_SCHOOL_2" />
               </h3>
               <Typography variant="body1" component="p">
-                Bachelor of math
+                <T id="EDUCATION_SCHOOL_2_INFO" />
               </Typography>
             </TimelineContent>
           </DisableOppositeTimelineItem>
         </Timeline>
         <Divider className={styles.product_term} />
-        <h2>Project</h2>
+        <h2>
+          <T id="PROJECT" />
+        </h2>
         <Card className={styles.product_term} elevation={0}>
           <Grid container alignItems="center" spacing={3}>
             <Grid item md={5} className={styles.no_padding}>
@@ -421,10 +473,11 @@ const Home: NextPage = () => {
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
-                <h3>Gliona</h3>
+                <h3>
+                  <T id="PROJECT_GLIONA_TITLE" />
+                </h3>
                 <Typography variant="body1" component="p">
-                  A Serverless management system based on React-Admin Manage the
-                  visited veterinary hospital for pet business
+                  <T id="PROJECT_GLIONA_INFO" />
                 </Typography>
                 <h5>
                   <a
@@ -451,10 +504,11 @@ const Home: NextPage = () => {
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
-                <h3>Cardovo</h3>
+                <h3>
+                  <T id="PROJECT_CARDOVO_TITLE" />
+                </h3>
                 <Typography variant="body1" component="p">
-                  The Flutter App: Cardovo, which is a convenient application
-                  that can store all your membership cards.
+                  <T id="PROJECT_CARDOVO_INFO" />
                 </Typography>
                 <h5>
                   <a
@@ -482,11 +536,11 @@ const Home: NextPage = () => {
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
-                <h3>Mobile Wallet</h3>
+                <h3>
+                  <T id="PROJECT_WALLET_TITLE" />
+                </h3>
                 <Typography variant="body1" component="p">
-                  P2P money Transfer Bill Payments International money
-                  remittance Disbursements: Payroll/ Social/ Government Consumer
-                  App
+                  <T id="PROJECT_WALLET_INFO" />
                 </Typography>
                 <h5>
                   <a
@@ -513,11 +567,11 @@ const Home: NextPage = () => {
             </Grid>
             <Grid item md={7} className={styles.no_padding}>
               <Box className={styles.product_content}>
-                <h3>Gliona</h3>
+                <h3>
+                  <T id="PROJECT_GAMILMS_TITLE" />
+                </h3>
                 <Typography variant="body1" component="p">
-                  Use MEAN (MongoDB, Express, Angular and Node) stack for build
-                  a “Meaningful Gamification Learning Management System” Member
-                  can learn and build their mobile game on GAMILMS.
+                  <T id="PROJECT_GAMILMS_INFO" />
                 </Typography>
                 <h5>
                   <a
@@ -536,7 +590,14 @@ const Home: NextPage = () => {
           <Typography variant="body2" color="secondary" align="center">
             {"Copyright © "}
             AJ-Home {new Date().getFullYear()}.
-          </Typography>
+          </Typography>{" "}
+          <IconButton
+            color="primary"
+            onClick={() => setLang(lang === "zh" ? "en" : "zh")}
+          >
+            <FontAwesomeIcon icon={["fas", "language"]} />
+          </IconButton>
+          <div style={{ marginTop: "2rem" }}></div>
         </Box>
       </Container>
     </div>
