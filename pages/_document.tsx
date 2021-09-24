@@ -20,14 +20,11 @@ export default class MyDocument extends Document {
           ></script>
           <script
             dangerouslySetInnerHTML={{
-              __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L078JKZ3YZ');
-</script>`,
+              __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-L078JKZ3YZ');`,
             }}
           />
         </Head>
