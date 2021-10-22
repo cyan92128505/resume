@@ -33,6 +33,15 @@ const LangProvider: React.FunctionComponent<{}> = ({ children }) => {
 
 function useLangState() {
   const langState = React.useContext(LangStateContext);
+  if (typeof window !== "undefined") {
+    const query = window.location.search;
+    if (/zh/.test(query)) {
+      return {
+        lang: "zh",
+        keys: zh,
+      };
+    }
+  }
 
   if (langState === undefined) {
     return {
