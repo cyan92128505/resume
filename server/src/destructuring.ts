@@ -14,4 +14,4 @@ var destructuring = function (options: any) {
   };
 };
 
-console.log(destructuring(options));
+export default destructuring;
