@@ -2,15 +2,17 @@
 
 - Phone: +886935811196
 - Email: [cyan92128505@gmail.com](mailto:cyan92128505@gmail.com)
-- Github: [gitHub.com/cyan92128505](https://github.com/cyan92128505)
-- Linkedin: [linkedin.com/in/wei-hsin-liao-21ba3b60/](https://www.linkedin.com/in/wei-hsin-liao-21ba3b60/)
+- Github: [GitHub.com/cyan92128505](https://github.com/cyan92128505)
+- Linkedin: [Linkedin.com/in/wei-hsin-liao-21ba3b60/](https://www.linkedin.com/in/wei-hsin-liao-21ba3b60/)
 
 ---
 
 ## Education
 
-- Changhua Normal University: Master of digital content technology and management (2013/09-2016/06)
-- Changhua Normal University: Bachelor of math (2008/09-2013/06)
+- Changhua Normal University:
+  Master of digital content technology and management (2013/09-2016/06)
+- Changhua Normal University:
+  Bachelor of math (2008/09-2013/06)
 
 ---
 
@@ -31,7 +33,7 @@
   - Build and maintain Flutter CI/CD Flow on Github Action and GitlabCI, Publish on Android/iOS
   - Teaching and Promote Flutter
 
-#### [New Garden](https://www.ultronsmart.com/): Flutter Front-End Engineer (2020/04-2021/02)
+#### [New Garden](https://www.ultronsmart.com/): Flutter Web Engineer (2020/04-2021/02)
 
 - Leading the construction of a full-platform background management system (Flutter, React)
   - Refactored the original React website into the Flutter website

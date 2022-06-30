@@ -2,8 +2,8 @@
 
 - Phone: +886935811196
 - Email: [cyan92128505@gmail.com](mailto:cyan92128505@gmail.com)
-- Github: [gitHub.com/cyan92128505](https://github.com/cyan92128505)
-- Linkedin: [linkedin.com/in/wei-hsin-liao-21ba3b60/](https://www.linkedin.com/in/wei-hsin-liao-21ba3b60/)
+- Github: [GitHub.com/cyan92128505](https://github.com/cyan92128505)
+- Linkedin: [Linkedin.com/in/wei-hsin-liao-21ba3b60/](https://www.linkedin.com/in/wei-hsin-liao-21ba3b60/)
 
 ---
 
